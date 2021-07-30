@@ -1,44 +1,43 @@
-# Interaction: alert, prompt, confirm
+# Interactie: alert, prompt, confirm
 
-As we'll be using the browser as our demo environment, let's see a couple of functions to interact with the user: `alert`, `prompt` and `confirm`.
-
+Sinds we de browser als onze demo omgeving gaan gebruiken, laten we een paar functies bekijken om met de gebruiker te interacteren: `alert`, `prompt` en `confirm`.
 ## alert
 
-This one we've seen already. It shows a message and waits for the user to press "OK".
+Deze hebben we al een keer gezien. Het laat een notificatie zien and wacht voor de gebruiker om op "OK" te drukken.
 
-For example:
+Bijvoorbeeld:
 
 ```js run
-alert("Hello");
+alert("Hallo");
 ```
 
-The mini-window with the message is called a *modal window*. The word "modal" means that the visitor can't interact with the rest of the page, press other buttons, etc, until they have dealt with the window. In this case -- until they press "OK".
+Het kleine venster met het bericht heet een *modaal venster*. Het woord "modaal" betekent dat de bezoeker niet met de rest van de pagina kan interacteren, andere knoppen klikken, etc, totdat ze klaar zijn met het venster. In dit geval -- totdat zij op "OK" drukken.
 
 ## prompt
 
-The function `prompt` accepts two arguments:
+De functie `prompt` accepteert twee argumenten:
 
 ```js no-beautify
-result = prompt(title, [default]);
+resultaat = prompt(titel, [standaard]);
 ```
 
-It shows a modal window with a text message, an input field for the visitor, and the buttons OK/Cancel.
+Het laat een modaal venster zien met een tekst bericht, een invoer veld voor de bezoeker, en de knoppen OK/Annuleer.
 
-`title`
-: The text to show the visitor.
+`titel`
+: De tekst om aan de bezoeker te laten zien.
 
-`default`
-: An optional second parameter, the initial value for the input field.
+`standaard`
+: Een tweede optionele parameter, de eerste waarde voor het invoer veld.
 
-```smart header="The square brackets in syntax `[...]`"
-The square brackets around `default` in the syntax above denote that the parameter is optional, not required.
+```smart header="De vierkante haakjes in de syntax `[...]`"
+De vierkante haakjes om `standaard` heen in de syntax hierboven betekent dat de parameter optioneel is, niet vereist.
 ```
 
-The visitor can type something in the prompt input field and press OK. Then we get that text in the `result`. Or they can cancel the input by pressing Cancel or hitting the `key:Esc` key, then we get `null` as the `result`.
+De bezoeker kan iets in het invoer veld van de prompt typen and dan op "OK" klikken. Dan krijgen we die tekst in de `resultaat`. Of ze kunnen het ingevoerde annuleren door op Annuleer of de `key:Esc` te klikken, dan krijgen we `null` als `resultaat`.
 
-The call to `prompt` returns the text from the input field or `null` if the input was canceled.
+De oproep naar `prompt`  to `prompt` keert de tekst van het invor veld terug of `null` als de input was geannuleerd.
 
-For instance:
+Bijvoorbeeld:
 
 ```js run
 let age = prompt('How old are you?', 100);
@@ -55,7 +54,7 @@ Run this code in Internet Explorer to see:
 let test = prompt("Test");
 ```
 
-So, for prompts to look good in IE, we recommend always providing the second argument:
+Dus, zodat prompts er goed uitzien in IE, adviseren wij dat je altijd een tweede argument verstrekt.
 
 ```js run
 let test = prompt("Test", ''); // <-- for IE
